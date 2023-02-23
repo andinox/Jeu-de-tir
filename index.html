@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+	<link rel="stylesheet" href="./css/reset.css">
+	<link rel="stylesheet" href="./css/style.css">
+	<title>Document</title>
+</head>
+<body>	
+	<div class="history">
+		<div id="btn" class="button">
+			<img src="./img/clipboard-svgrepo-com.svg" alt="" srcset="">
+		</div>
+		<section id="histo" class="hist none">
+			<div>
+				<p>Date</p>
+				<p>Difficulté</p>
+				<p>montreType</p>
+				<p>mode</p>
+				<p>score</p>
+			</div>
+		</section>
+	</div>
+	<section class="s_g">
+		<div id='monstre' class="monstre" style='display:none'><img src="" alt="bug"></div>
+		<div id='terrain_de_jeu'></div>
+		<div id="para">
+			<div id="start">
+				<p>START</p>
+			</div>
+			<div id="difficulty">
+				<label>
+					<p>Difficulté:</p>
+					<input id="c_d" type="range" min="0" max="4" step="1" value="0">
+					<p > <span class="fleche"> ►</span> <span id="diff">Facile</span> </p>
+				</label>
+			</div>
+			<div class="style_monstre">
+				<div data-montre="0" class="choisi_m monstre_s">
+					<img src="./img/bomb_s.svg" alt="" srcset="">
+				</div>
+				<div data-montre="1" class="monstre_s">
+					<img src="./img/ghost_s.svg" alt="" srcset="">
+				</div>
+				<div data-montre="2" class="monstre_s">
+					<img src="./img/head_s.svg" alt="" srcset="">
+				</div>
+			</div>
+			<div class="hover_click">
+				<div data-mode="mouseover" class="choisi_s mouse_c">
+					<p>HOVER</p>
+				</div>
+				<div data-mode="click" class="mouse_c">
+					<p>CLICK</p>
+				</div>
+			</div>
+			<div class="score">
+				<h1>Score</h1>
+				<p id="score">0</p>
+			</div>
+		</div>
+	</section>
+
+	<script src="./js/data.js"></script>
+	<script src="./js/event.js"></script>
+	<script src="./js/monstre.js"></script>
+	<script src="./js/game.js"></script>
+</body>
+</html>
