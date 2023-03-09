@@ -1,1 +1,71 @@
-var _0x1ff946=_0xc431;function _0xc431(_0x326b21,_0x3c3d32){var _0x278e68=_0x278e();return _0xc431=function(_0xc43176,_0x3df432){_0xc43176=_0xc43176-0x11b;var _0x7afe7=_0x278e68[_0xc43176];return _0x7afe7;},_0xc431(_0x326b21,_0x3c3d32);}(function(_0x23a354,_0x150a20){var _0x19b148=_0xc431,_0x2ae811=_0x23a354();while(!![]){try{var _0x4bc9b3=parseInt(_0x19b148(0x11b))/0x1+-parseInt(_0x19b148(0x131))/0x2*(-parseInt(_0x19b148(0x125))/0x3)+-parseInt(_0x19b148(0x129))/0x4*(parseInt(_0x19b148(0x13d))/0x5)+-parseInt(_0x19b148(0x12f))/0x6+-parseInt(_0x19b148(0x130))/0x7+-parseInt(_0x19b148(0x13a))/0x8+parseInt(_0x19b148(0x11d))/0x9;if(_0x4bc9b3===_0x150a20)break;else _0x2ae811['push'](_0x2ae811['shift']());}catch(_0x391a06){_0x2ae811['push'](_0x2ae811['shift']());}}}(_0x278e,0xf23d9));class Game{['score']=0x0;[_0x1ff946(0x124)]=!![];[_0x1ff946(0x135)]=0x0;['game_area'];constructor(){var _0x11c2f5=_0x1ff946;this[_0x11c2f5(0x12e)]=document[_0x11c2f5(0x13b)](_0x11c2f5(0x132)),this[_0x11c2f5(0x137)]=Data['monstre'][Settings[_0x11c2f5(0x11e)]],this[_0x11c2f5(0x142)]=Settings[_0x11c2f5(0x127)],this[_0x11c2f5(0x11f)]=Settings[_0x11c2f5(0x11f)],this[_0x11c2f5(0x135)]=0x3e8-0x64*(parseInt(this[_0x11c2f5(0x11f)])+0x1),console['log'](this[_0x11c2f5(0x135)]),this['start']();}['start'](){var _0xadae14=_0x1ff946;this[_0xadae14(0x123)]=setInterval(()=>{var _0x549975=_0xadae14;this[_0x549975(0x12e)]['appendChild'](new Monstre(this));},this['time']);}[_0x1ff946(0x139)](){var _0x1fb4a3=_0x1ff946;this[_0x1fb4a3(0x140)]++,document[_0x1fb4a3(0x13b)](_0x1fb4a3(0x140))['innerText']=this[_0x1fb4a3(0x140)];}[_0x1ff946(0x121)](){var _0x483429=_0x1ff946;if(this[_0x483429(0x124)]){var _0x4bd0db=document[_0x483429(0x13c)](_0x483429(0x12c));_0x4bd0db[_0x483429(0x128)]=_0x483429(0x13f)+this[_0x483429(0x143)]()+_0x483429(0x13e)+Data[_0x483429(0x11f)][this[_0x483429(0x11f)]]+_0x483429(0x13e)+this[_0x483429(0x137)]+_0x483429(0x13e)+Settings['mode']+_0x483429(0x13e)+this[_0x483429(0x140)]+_0x483429(0x12b),document[_0x483429(0x13b)](_0x483429(0x11c))[_0x483429(0x133)](_0x4bd0db),console[_0x483429(0x134)]('ddd'),clearInterval(this['spawn']),document[_0x483429(0x12d)](_0x483429(0x136))[_0x483429(0x12a)]='START',this[_0x483429(0x140)]=-0x1,this[_0x483429(0x139)](),this[_0x483429(0x12e)][_0x483429(0x128)]='',this[_0x483429(0x124)]=![];}}[_0x1ff946(0x143)](){var _0x5b0fec=_0x1ff946,_0x1de5a8=new Date(),_0x1b6fa3=_0x1de5a8[_0x5b0fec(0x141)](),_0x45cfa6=_0x1de5a8[_0x5b0fec(0x138)](),_0x38e9a3=_0x1de5a8[_0x5b0fec(0x122)](),_0x3a4e1a=_0x1de5a8[_0x5b0fec(0x120)]()+0x1,_0x2d92de=_0x1de5a8[_0x5b0fec(0x126)]();return _0x45cfa6<0xa&&(_0x45cfa6='0'+_0x45cfa6),_0x1b6fa3<0xa&&(_0x1b6fa3='0'+_0x1b6fa3),_0x1b6fa3+'h'+_0x45cfa6+'\x20'+_0x38e9a3+'/'+_0x3a4e1a+'/'+_0x2d92de;}}function _0x278e(){var _0x42f5fc=['monstre','difficulty','getMonth','gameover','getDate','spawn','state','4317CcEAAY','getFullYear','mode','innerHTML','7255444VUYTzS','innerText','</p>','div','querySelector','game_area','6285360tWfOat','8138144lqVSIx','1266eoEMbG','terrain_de_jeu','appendChild','log','time','#start\x20p','monstre_img','getMinutes','updateScore','14907704AZDxGh','getElementById','createElement','5bMVqDR','</p><p>','<p>','score','getHours','game_mode','getDateFormatted','1661067mcdPsE','histo','38769651DNxBVT'];_0x278e=function(){return _0x42f5fc;};return _0x278e();}
+class Game {
+    score = 0;
+    state = true; // true = playing, false = game over
+    time = 0;
+    game_area;
+
+
+    constructor() {
+        this.game_area = document.getElementById("terrain_de_jeu");
+        this.monstre_img = Data.monstre[Settings.monstre];
+        this.game_mode = Settings.mode;
+        this.difficulty = Settings.difficulty;
+        this.time =1000-(100*(parseInt(this.difficulty)+1));
+        console.log(this.time)
+        this.start()
+    }   
+    
+    start() {
+        this.spawn = setInterval(() => {
+            this.game_area.appendChild(new Monstre(this))
+        }, this.time)
+    }
+
+    updateScore() {
+        this.score++;
+        document.getElementById("score").innerText = this.score;
+    }
+
+    gameover() {
+        if (this.state) {
+            
+
+            var log = document.createElement("div");
+            log.innerHTML =  `<p>${this.getDateFormatted()}</p><p>${Data.difficulty[this.difficulty]}</p><p>${this.monstre_img}</p><p>${Settings.mode}</p><p>${this.score}</p>`
+            document.getElementById("histo").appendChild(log)
+
+            console.log("ddd")
+            clearInterval(this.spawn);
+            document.querySelector("#start p").innerText =  "START";
+            this.score = -1;
+            this.updateScore()
+            this.game_area.innerHTML = "";
+            this.state = false;
+
+        }
+    }
+
+    getDateFormatted() {
+        var date = new Date();
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var day = date.getDate();
+        var month = date.getMonth() + 1;
+        var year = date.getFullYear();
+      
+        // Ajouter un zéro devant les minutes si elles sont inférieures à 10
+        if (minutes < 10) {
+          minutes = '0' + minutes;
+        }
+      
+        // Ajouter un zéro devant les heures si elles sont inférieures à 10
+        if (hours < 10) {
+          hours = '0' + hours;
+        }
+      
+        // Retourner la date formatée
+        return hours + 'h' + minutes + ' ' + day + '/' + month + '/' + year;
+      }
+
+
+}
