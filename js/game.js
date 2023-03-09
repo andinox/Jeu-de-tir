@@ -6,12 +6,11 @@ class Game {
 
 
     constructor() {
-        this.game_area = document.getElementById("terrain_de_jeu");
+        this.game_area   = document.getElementById("terrain_de_jeu");
         this.monstre_img = Data.monstre[Settings.monstre];
-        this.game_mode = Settings.mode;
-        this.difficulty = Settings.difficulty;
-        this.time =1000-(100*(parseInt(this.difficulty)+1));
-        console.log(this.time)
+        this.game_mode   = Settings.mode;
+        this.difficulty  = Settings.difficulty;
+        this.time        = Settings.spawntime - (100*(parseInt(this.difficulty)+1));
         this.start()
     }   
     
@@ -28,16 +27,32 @@ class Game {
 
     gameover() {
         if (this.state) {
+            var p = document.createElement("p")
+            var div = document.createElement("div")
+            var logs = {
+              0 :  this.getDateFormatted(),   //date
+              1 :  Data.difficulty[this.difficulty], //difficulty
+              2 :  this.monstre_img, //monstre
+              3 :  Settings.mode, //mode
+              4 :  this.score
+            }
+
             
 
-            var log = document.createElement("div");
-            log.innerHTML =  `<p>${this.getDateFormatted()}</p><p>${Data.difficulty[this.difficulty]}</p><p>${this.monstre_img}</p><p>${Settings.mode}</p><p>${this.score}</p>`
-            document.getElementById("histo").appendChild(log)
+            for(let i=0;i<=4;i++) {
+                var new_p = p.cloneNode(false);
+                new_p.appendChild(document.createTextNode(logs[i]))
+                div.appendChild(new_p);
+            }
+            
+            
+            
+            document.getElementById("histo").appendChild(div)
 
-            console.log("ddd")
+            
             clearInterval(this.spawn);
-            document.querySelector("#start p").innerText =  "START";
             this.score = -1;
+            btn_start("game")
             this.updateScore()
             this.game_area.innerHTML = "";
             this.state = false;
@@ -45,26 +60,13 @@ class Game {
         }
     }
 
+
+    //return un date de la forme 'heure:minute J/M/AAAA'
     getDateFormatted() {
         var date = new Date();
-        var hours = date.getHours();
-        var minutes = date.getMinutes();
-        var day = date.getDate();
-        var month = date.getMonth() + 1;
-        var year = date.getFullYear();
-      
-        // Ajouter un zéro devant les minutes si elles sont inférieures à 10
-        if (minutes < 10) {
-          minutes = '0' + minutes;
-        }
-      
-        // Ajouter un zéro devant les heures si elles sont inférieures à 10
-        if (hours < 10) {
-          hours = '0' + hours;
-        }
-      
-        // Retourner la date formatée
-        return hours + 'h' + minutes + ' ' + day + '/' + month + '/' + year;
+        var minutes = (date.getMinutes() < 10) ? `0${date.getMinutes()}` : date.getMinutes()
+        var hours = (date.getHours() < 10) ? `0${date.getHours()}` : date.getHours()
+        return `${hours}h${minutes} ${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
       }
 
 

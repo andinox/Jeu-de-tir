@@ -13,10 +13,13 @@ class Data {
         1 : "ghost",
         2 : "head"
     }
+
 }
 
 class Settings {
-    static difficulty = 0;
-    static monstre = "0";
-    static mode = "mouseover";
+    static difficulty = 0
+    static monstre = "0"
+    static mode = "mouseover"
+    static lifetime = 5000
+    static spawntime = 1000
 }

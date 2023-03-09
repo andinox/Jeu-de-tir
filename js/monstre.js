@@ -2,7 +2,6 @@ class Monstre {
     alive = true;
 
     constructor(game) {
-
         this.element = document.getElementById("monstre").cloneNode(true);
         this.element.style.display = "block";
         this.element.childNodes[0].setAttribute("src", `./img/${game.monstre_img}.svg`);
@@ -39,12 +38,12 @@ class Monstre {
             if (this.alive) {
                 clearInterval(this.clignote)
                 clearTimeout(willexplod)
-                //game.gameover();
+                game.gameover()
             }
         }, this.wait);
 
 
 
         return this.element;
-    } 30
+    }
 }

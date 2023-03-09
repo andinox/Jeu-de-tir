@@ -120,7 +120,7 @@ div#monstre {
 .hist {
     z-index: 4;
     align-items: flex-start;
-    flex-direction: column;    
+    flex-direction: column;
 }
 
 .hist div {
@@ -131,10 +131,16 @@ div#monstre {
     padding-top: 15px;
     padding-bottom: 15px;
     border-bottom: 0.5px solid rgba(0, 0, 0, 0.25);
+    flex-wrap: nowrap;
 }
 
 .hist div p {
-    font-family: Raleway;
+    flex: 0 0 20%;
+    font-family:  Courier ;
+}
+
+.hist div p:first-child {
+    margin-left: 150px;
 }
 
 #difficulty {
@@ -248,7 +254,7 @@ div#monstre {
 }
 
 .score p {
-    font-size: 200px;
+    font-size: 100px;
     font-weight: lighter;
     font-family: Raleway;
 }
